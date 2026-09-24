@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Changa+One:ital@0;1&family=Climate+Crisis:YEAR@1979&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Oswald:wght@200..700&display=swap');
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --bg-color: #f4f7f6;
+            --text-color: #333;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Oswald, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* =========================================
+           Header y Navegación (CSS Grid)
+        ========================================= */
+        header {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-family: Oswald, sans-serif;
+            margin-bottom: 15px;
+            font-size: 2.2rem;
+        }
+
+        nav {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Aplicación de CSS Grid para el menú */
+        nav ul {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 15px;
+            list-style: none;
+        }
+
+        nav a {
+            display: block;
+            background-color: var(--secondary-color);
+            color: var(--white);
+            text-decoration: none;
+            padding: 12px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #2980b9;
+        }
+
+        /* =========================================
+           Estructura Principal (Flexbox)
+        ========================================= */
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+            gap: 30px;
+        }
+
+        main {
+            flex: 3;
+            min-width: 60%;
+            background: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        aside {
+            flex: 1;
+            min-width: 250px;
+            background: var(--white);
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            align-self: start;
+        }
+
+        /* =========================================
+           Secciones Internas
+        ========================================= */
+        section {
+            margin-bottom: 40px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+        }
+
+        section:last-child {
+            border-bottom: none;
+        }
+
+        h2 {
+            font-family: Oswald, sans-serif;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+        }
+
+        h3 {
+            color: var(--secondary-color);
+            margin-top: 15px;
+            margin-bottom: 10px;
+        }
+
+        .author-card {
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            background-color: #fafafa;
+        }
+
+        .author-card img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border: 3px solid var(--secondary-color);
+        }
+
+        /* =========================================
+           Footer
+        ========================================= */
+        footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        /* =========================================
+           Responsive Design (Media Queries)
+        ========================================= */
+        @media (max-width: 768px) {
+            nav ul {
+                grid-template-columns: 1fr; /* Una columna en móviles */
+            }
+            .container {
+                flex-direction: column;
+            }
+        }
+
+        .navbar {
+            background-color: #006080; /* Azul similar a la imagen */
+        }
+
+        .menu-principal {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr); /* Grid de 5 columnas iguales */
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .menu-principal > li {
+            position: relative; /* Clave para que el submenú se posicione debajo */
+            text-align: center;
+        }
+
+        .menu-principal > li > a {
+            display: block;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 18px 20px;
+            font-size: 1.1rem;
+            transition: background 0.2s;
+        }
+
+.menu-principal > li > a:hover {
+    background-color: #727272; 
+}
+
+/* =========================================
+   Submenú Desplegable (Lecturas)
+========================================= */
+.submenu {
+    display: none; 
+    position: absolute;
+    top: 100%; 
+    left: 0;
+    background-color: #00506b; /* Azul para el fondo del submenú */
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    min-width: 260px;
+    text-align: left;
+    box-shadow: 2px 4px 8px rgba(0,0,0,0.3);
+    z-index: 1000;
+}
+
+/* Mostrar submenú al hacer hover en el li padre */
+.menu-principal > li:hover .submenu {
+    display: block;
+}
+
+.submenu li a {
+    display: block;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 12px 20px;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+}
+
+/* Hover de los ítems DENTRO de lecturas (Se oscurece en azul, no gris) */
+.submenu li a:hover {
+    background-color: #003d52; 
+}
+
+        /* Contenedor del contenido */
+        .contenido {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .perfil-contenedor {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border: 1px solid #eaeaea;
+        }
+        .foto-perfil {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #006080;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);

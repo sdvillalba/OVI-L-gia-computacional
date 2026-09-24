@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lectura 2 - Arregles y Datos</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    
+    <!-- EL MISMO HEADER Y MENÚ PARA NO PERDER LA NAVEGACIÓN -->
+    <header>
+        <h1>Lógica Computacional y POO</h1>
+       <nav class="navbar">
+        <ul class="menu-principal">
+            <li><a href="index.html">Inicio</a></li>
+            <li>
+                <a href="#">Lecturas</a>
+                <ul class="submenu">
+                    <li><a href="lectura1.html">1. Algoritmia y Control</a></li>
+                    <li><a href="lectura2.html">2. Arreglos y Datos</a></li>
+                    <li><a href="lectura3.html">3. Fundamentos de POO</a></li>
+                    <li><a href="lectura4.html">4. Pilares de la POO</a></li>
+                    <li><a href="lectura5.html">5. Arquitectura y Patrones</a></li>
+                </ul>
+            </li>
+            <li><a href="multimedia.html">Multimedia</a></li>
+            <li><a href="actividades.html">Actividades</a></li>
+            <li><a href="autores.html">Autores</a></li>
+        </ul>
+       </nav>  
+    </header>
+
+    <div class="container">
+        <!-- CONTENIDO PRINCIPAL DE LA LECTURA 1 -->
+        <main class="contenido">
+    <h1>Lectura 2: Arreglos y Gestión de Datos</h1>
+    <p>En programación, a menudo necesitamos almacenar múltiples valores lógicamente agrupados. Aquí entran los arreglos (arrays) y las matrices.</p>
+    
+    <h3>Vectores (Arreglos Unidimensionales)</h3>
+    <p>Un arreglo es una estructura de datos estática que almacena elementos del mismo tipo de manera contigua en la memoria.</p>
+    <pre style="background:#eee; padding:10px;">
+    int[] calificaciones = {85, 90, 78, 92, 100};
+    for(int i = 0; i < calificaciones.length; i++) {
+    System.out.println("Nota " + i + ": " + calificaciones[i]);}</pre>
+
+    <h3>Lógica de Búsqueda y Ordenamiento</h3>
+    <p>Una vez tenemos datos en un arreglo, la lógica computacional nos permite ordenarlos (ej. Método Burbuja) o buscar datos específicos (ej. Búsqueda Binaria o Secuencial).</p>
+    <hr style="margin: 30px 0; border: 0; border-top: 1px solid #ccc;">
+     <p style="font-size: 0.9em; color: #666;"><em>Referencia: Deitel, P., & Deitel, H. (2016). Java: Cómo programar (10a ed.). Pearson Educación.</em></p>
+</main>
+    </div>
+
+    <!-- EL MISMO FOOTER -->
+    <footer>
+        <p>&copy; 2026 OVI Lógica Computacional. Proyecto académico - Universidad de Córdoba.</p>
+    </footer>
+</body>
+</html>

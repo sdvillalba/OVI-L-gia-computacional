@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividades - OVI Lógica Computacional</title>
+    <link rel="stylesheet" href="estilo.css">
+    <style>
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>Lógica Computacional y POO</h1>
+       <nav class="navbar">
+        <ul class="menu-principal">
+            <li><a href="index.html">Inicio</a></li>
+            <li>
+                <a href="#">Lecturas</a>
+                <ul class="submenu">
+                    <li><a href="lectura1.html">1. Algoritmia y Control</a></li>
+                    <li><a href="lectura2.html">2. Arreglos y Datos</a></li>
+                    <li><a href="lectura3.html">3. Fundamentos de POO</a></li>
+                    <li><a href="lectura4.html">4. Pilares de la POO</a></li>
+                    <li><a href="lectura5.html">5. Arquitectura y Patrones</a></li>
+                </ul>
+            </li>
+            <li><a href="multimedia.html">Multimedia</a></li>
+            <li><a href="actividades.html">Actividades</a></li>
+            <li><a href="autores.html">Autores</a></li>
+        </ul>
+       </nav>  
+    </header>
+
+    <div class="container">
+        <main class="contenido" style="width: 100%;">
+            <h2>Actividades Interactivas</h2>
+            <p>Pon a prueba tu lógica computacional resolviendo los siguientes ejercicios.</p>
+
+            <div class="actividad-box">
+                <h3>Actividad 1: Prueba de Escritorio (Dry Run)</h3>
+                <p>Analiza el siguiente fragmento de código. ¿Cuál será el valor final de la variable <code>contador</code> al terminar la ejecución?</p>
+                <pre style="background:#eee; padding:15px; border-radius:5px; border-left: 4px solid #3498db; overflow-x: auto; margin-bottom: 15px;">
+int contador = 0;
+for (int i = 1; i <= 3; i++) {
+    for (int j = 1; j <= 2; j++) {
+        contador = contador + 1;
+    }
+}</pre>
+                <label for="respuesta1">Ingresa el valor numérico:</label>
+                <input type="number" id="respuesta1" style="padding: 8px; width: 80px; margin-left: 10px;">
+                <button class="btn-evaluar" onclick="evaluarActividad1()">Verificar</button>
+                <p id="resultado-actividad1" class="resultado"></p>
+            </div>
+
+            <div class="actividad-box">
+                <h3>Actividad 2: Identificación de Pilares POO</h3>
+                <p>Relaciona el concepto: <em>"Capacidad de restringir el acceso directo a los atributos de una clase, obligando el uso de métodos Getters y Setters."</em></p>
+                <form id="quiz-poo">
+                    <input type="radio" name="pilar" value="herencia"> Herencia<br>
+                    <input type="radio" name="pilar" value="encapsulamiento"> Encapsulamiento<br>
+                    <input type="radio" name="pilar" value="polimorfismo"> Polimorfismo<br>
+                    <button type="button" class="btn-evaluar" onclick="evaluarActividad2()" style="margin-top: 15px;">Verificar</button>
+                </form>
+                <p id="resultado-actividad2" class="resultado"></p>
+            </div>
+
+            <div class="actividad-box">
+                <h3>Actividad 3: Índices de Arreglos</h3>
+                <p>Dado el siguiente arreglo unidimensional (vector), ¿Qué valor se imprimirá en pantalla al solicitar la posición 3?</p>
+                <pre style="background:#eee; padding:15px; border-radius:5px; border-left: 4px solid #3498db; overflow-x: auto; margin-bottom: 15px;">
+int[] numeros = {10, 20, 30, 40, 50};
+System.out.println(numeros[3]);</pre>
+                <label for="respuesta3">Ingresa el valor impreso:</label>
+                <input type="number" id="respuesta3" style="padding: 8px; width: 80px; margin-left: 10px;">
+                <button class="btn-evaluar" onclick="evaluarActividad3()">Verificar</button>
+                <p id="resultado-actividad3" class="resultado"></p>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 OVI Lógica Computacional. Proyecto académico - Universidad de Córdoba.</p>
+    </footer>
+
+    <!-- Script para evaluar las 3 actividades -->
+    <script>
+        function evaluarActividad1() {
+            const respuesta = document.getElementById('respuesta1').value;
+            const resultado = document.getElementById('resultado-actividad1');
+            
+            if (respuesta === "6") {
+                resultado.style.color = "green";
+                resultado.innerHTML = "¡Correcto! El bucle externo se ejecuta 3 veces y el interno 2 veces por iteración (3 x 2 = 6).";
+            } else {
+                resultado.style.color = "red";
+                resultado.innerHTML = "Incorrecto. Realiza la prueba de escritorio paso a paso nuevamente.";
+            }
+        }
+
+        function evaluarActividad2() {
+            const opciones = document.getElementsByName('pilar');
+            let seleccion = "";
+            const resultado = document.getElementById('resultado-actividad2');
+
+            for (let i = 0; i < opciones.length; i++) {
+                if (opciones[i].checked) {
+                    seleccion = opciones[i].value;
+                }
+            }
+
+            if (seleccion === "encapsulamiento") {
+                resultado.style.color = "green";
+                resultado.innerHTML = "¡Correcto! El encapsulamiento protege la integridad de los datos.";
+            } else {
+                resultado.style.color = "red";
+                resultado.innerHTML = "Incorrecto. Revisa la Lectura 4 sobre los Pilares de la POO.";
+            }
+        }
+
+        function evaluarActividad3() {
+            const respuesta = document.getElementById('respuesta3').value;
+            const resultado = document.getElementById('resultado-actividad3');
+            
+            if (respuesta === "40") {
+                resultado.style.color = "green";
+                resultado.innerHTML = "¡Correcto! Los arreglos comienzan en el índice 0. Por lo tanto, [0]=10, [1]=20, [2]=30, [3]=40.";
+            } else {
+                resultado.style.color = "red";
+                resultado.innerHTML = "Incorrecto. Recuerda que los índices de los arreglos no empiezan a contar desde el número 1.";
+            }
+        }
+    </script>
+</body>
+</html>

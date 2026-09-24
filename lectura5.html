@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lectura 5 - Arquitectura y Patrones</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    
+    <!-- EL MISMO HEADER Y MENÚ PARA NO PERDER LA NAVEGACIÓN -->
+    <header>
+        <h1>Lógica Computacional y POO</h1>
+       <nav class="navbar">
+        <ul class="menu-principal">
+            <li><a href="index.html">Inicio</a></li>
+            <li>
+                <a href="#">Lecturas</a>
+                <ul class="submenu">
+                    <li><a href="lectura1.html">1. Algoritmia y Control</a></li>
+                    <li><a href="lectura2.html">2. Arreglos y Datos</a></li>
+                    <li><a href="lectura3.html">3. Fundamentos de POO</a></li>
+                    <li><a href="lectura4.html">4. Pilares de la POO</a></li>
+                    <li><a href="lectura5.html">5. Arquitectura y Patrones</a></li>
+                </ul>
+            </li>
+            <li><a href="multimedia.html">Multimedia</a></li>
+            <li><a href="actividades.html">Actividades</a></li>
+            <li><a href="autores.html">Autores</a></li>
+        </ul>
+       </nav>  
+    </header>
+
+    <div class="container">
+        <!-- CONTENIDO PRINCIPAL DE LA LECTURA 1 -->
+        <main class="contenido">
+    <h1>Lectura 5: Arquitectura, Archivos y Patrones de Diseño</h1>
+    <p>A medida que la lógica de nuestro programa crece, necesitamos organizar el código. Aquí entra la arquitectura de software.</p>
+    
+    <h3>Patrón Factory Method</h3>
+    <p>Es un patrón creacional que proporciona una interfaz para crear objetos en una superclase, pero permite a las subclases alterar el tipo de objetos que se crearán. Es muy útil, por ejemplo, en sistemas de ventas donde una fábrica de objetos decide si instanciar un "Postre", un "Helado" o un "Pastel".</p>
+    
+    <h3>Persistencia de Datos Lógica</h3>
+    <p>Los objetos viven en la memoria RAM y mueren al cerrar el programa. Para persistir datos, utilizamos la lógica de manejo de archivos de texto (I/O). En Java, clases como <code>FileWriter</code> y <code>BufferedReader</code> permiten escribir objetos en archivos <code>.txt</code> para crear un historial persistente.</p>
+    <hr style="margin: 30px 0; border: 0; border-top: 1px solid #ccc;">
+     <p style="font-size: 0.9em; color: #666;"><em>Referencia: Gamma, E., Helm, R., Johnson, R., & Vlissides, J. (1994). Design Patterns: Elements of Reusable Object-Oriented Software. Addison-Wesley.</em></p>
+</main>
+    </div>
+
+    <!-- EL MISMO FOOTER -->
+    <footer>
+        <p>&copy; 2026 OVI Lógica Computacional. Proyecto académico - Universidad de Córdoba.</p>
+    </footer>
+</body>
+</html>
